@@ -1,0 +1,50 @@
+{
+  "name": "antigravity-computer-browser-use",
+  "version": "1.0.0",
+  "description": "High-speed, zero-popup macOS Computer Use, Chrome Browser Use, and Apple Safari Browser Use MCP servers for Antigravity and MCP-compatible AI agents",
+  "bin": {
+    "antigravity-cua-mcp": "bin/antigravity-cua-mcp.js",
+    "antigravity-browser-mcp": "bin/antigravity-browser-mcp.js",
+    "antigravity-safari-mcp": "bin/antigravity-safari-mcp.js"
+  },
+  "scripts": {
+    "build": "swiftc -O bin/antigravity-cua-native.swift -o bin/antigravity-cua-native",
+    "test": "node tests/test_smoke.js",
+    "test:cua": "node tests/test_cua.js",
+    "test:browsers": "node tests/test_browsers.js",
+    "test:stress": "node tests/stress_test_all_features.js",
+    "install:mac": "./scripts/install.sh",
+    "uninstall:mac": "./scripts/uninstall.sh"
+  },
+  "dependencies": {
+    "chrome-devtools-mcp": "^1.12.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "os": [
+    "darwin"
+  ],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "computer-use",
+    "browser-use",
+    "macos",
+    "chrome-extension",
+    "safari",
+    "accessibility",
+    "screencapturekit",
+    "antigravity"
+  ],
+  "author": "arterialist",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arterialist/antigravity-computer-browser-use.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arterialist/antigravity-computer-browser-use/issues"
+  },
+  "homepage": "https://github.com/arterialist/antigravity-computer-browser-use#readme"
+}

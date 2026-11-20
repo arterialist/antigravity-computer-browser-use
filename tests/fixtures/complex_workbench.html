@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Antigravity Browser & Computer Use Workbench</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 24px; background: #0f172a; color: #f8fafc; }
+    h1 { color: #38bdf8; font-size: 24px; margin-bottom: 8px; }
+    p.subtitle { color: #94a3b8; margin-top: 0; }
+    .card { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+    .row { display: flex; gap: 12px; margin-bottom: 12px; align-items: center; }
+    input, select, textarea, button { background: #0f172a; border: 1px solid #475569; color: #f8fafc; padding: 8px 12px; border-radius: 6px; font-size: 14px; }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: #38bdf8; ring: 2px solid #38bdf8; }
+    button { background: #6366f1; border-color: #4f46e5; cursor: pointer; font-weight: 600; }
+    button:hover { background: #4f46e5; }
+    button.secondary { background: #334155; border-color: #475569; }
+    .drop-zone { min-height: 60px; border: 2px dashed #475569; border-radius: 6px; padding: 12px; margin-top: 8px; display: flex; gap: 8px; align-items: center; }
+    .drag-item { background: #0284c7; padding: 6px 12px; border-radius: 4px; cursor: grab; user-select: none; }
+    .status-log { font-family: ui-monospace, monospace; font-size: 12px; color: #a5f3fc; background: #090d16; padding: 8px; border-radius: 4px; min-height: 32px; }
+  </style>
+</head>
+<body>
+  <h1>Antigravity Stress-Test Workbench</h1>
+  <p class="subtitle">Multi-feature stress testing for Computer Use, Chrome, and Safari MCP harnesses.</p>
+
+  <div class="card" id="form-card">
+    <h2>Interactive Form Components</h2>
+    <div class="row">
+      <label for="username-field">Username:</label>
+      <input type="text" id="username-field" name="username" placeholder="Enter username" />
+      <label for="role-select">Role:</label>
+      <select id="role-select" name="role">
+        <option value="developer">Developer</option>
+        <option value="architect">Architect</option>
+        <option value="sentinel">Sentinel</option>
+      </select>
+    </div>
+    <div class="row">
+      <label>Priority:</label>
+      <input type="radio" id="priority-high" name="priority" value="high" checked /> <label for="priority-high">High</label>
+      <input type="radio" id="priority-low" name="priority" value="low" /> <label for="priority-low">Low</label>
+      <span style="width: 24px;"></span>
+      <input type="checkbox" id="telemetry-consent" name="consent" checked /> <label for="telemetry-consent">Enable Telemetry</label>
+    </div>
+    <div class="row">
+      <label for="notes-field">Execution Notes:</label>
+      <textarea id="notes-field" rows="2" style="width: 100%;" placeholder="Add telemetry notes here..."></textarea>
+    </div>
+    <div class="row">
+      <label for="file-upload-input">Attachment:</label>
+      <input type="file" id="file-upload-input" />
+      <div id="hover-target" style="padding: 6px 12px; background: #334155; border-radius: 4px; cursor: pointer;" title="Hovered Tooltip Content">Hover Test Target</div>
+    </div>
+    <div class="row">
+      <button id="submit-btn" onclick="logAction('Submitted form with username=' + document.getElementById('username-field').value)">Submit Form</button>
+      <button id="mutate-btn" class="secondary" onclick="triggerDynamicMutation()">Mutate DOM Dynamically</button>
+      <button id="emit-token-btn" class="secondary" onclick="generateToken()">Generate Verification Token</button>
+      <button id="console-btn" class="secondary" onclick="emitLogs()">Emit Console Logs</button>
+      <button id="clear-btn" class="secondary" onclick="clearFields()">Clear Fields</button>
+    </div>
+  </div>
+
+  <div class="card" id="token-card" style="display: none;">
+    <h2>Security Handshake Token</h2>
+    <div id="verification-token-box" style="font-size: 18px; font-weight: bold; color: #34d399; font-family: ui-monospace, monospace;">AGY-8842-LIVE</div>
+  </div>
+
+  <div class="card" id="drag-card">
+    <h2>Drag and Drop Surface</h2>
+    <div id="drag-source" class="drop-zone">
+      <div id="item-alpha" class="drag-item" draggable="true">Agent Alpha (#101)</div>
+      <div id="item-beta" class="drag-item" draggable="true">Agent Beta (#102)</div>
+    </div>
+    <div id="drag-target" class="drop-zone">
+      <span id="target-label" style="color: #64748b;">Drop agents here</span>
+    </div>
+  </div>
+
+  <div class="card" id="shadow-card">
+    <h2>Shadow DOM Component</h2>
+    <div id="shadow-host"></div>
+  </div>
+
+  <div class="card">
+    <h2>Real-Time Event Stream</h2>
+    <div id="status-display" class="status-log">System initialized. Awaiting automation...</div>
+  </div>
+
+  <script>
+    function logAction(msg) {
+      const display = document.getElementById('status-display');
+      display.textContent = '[' + new Date().toISOString().slice(11, 19) + '] ' + msg;
+    }
+
+    function clearFields() {
+      document.getElementById('username-field').value = '';
+      document.getElementById('notes-field').value = '';
+      logAction('Cleared all input fields');
+    }
+
+    function triggerDynamicMutation() {
+      logAction('Triggering asynchronous DOM mutation in 80ms...');
+      setTimeout(() => {
+        const card = document.getElementById('form-card');
+        const badge = document.createElement('div');
+        badge.id = 'dynamic-badge-' + Date.now();
+        badge.style.cssText = 'background: #10b981; color: #022c22; padding: 6px 12px; border-radius: 4px; font-weight: bold; margin-top: 8px;';
+        badge.textContent = 'Dynamic Node Attached: Verification Passed!';
+        card.appendChild(badge);
+        logAction('Dynamically attached badge node: ' + badge.id);
+      }, 80);
+    }
+
+    function generateToken() {
+      const card = document.getElementById('token-card');
+      card.style.display = 'block';
+      logAction('Security Handshake Token Generated: AGY-8842-LIVE');
+    }
+
+    function emitLogs() {
+      console.log('Antigravity Telemetry Stream Ping', { timestamp: Date.now() });
+      console.warn('Antigravity warning signal verified');
+      console.error('Antigravity test error captured');
+      logAction('Emitted 3 console messages (log, warn, error)');
+    }
+
+    // Shadow DOM setup
+    const host = document.getElementById('shadow-host');
+    const shadow = host.attachShadow({ mode: 'open' });
+    shadow.innerHTML = `
+      <style>
+        .shadow-box { background: #0f172a; border: 1px solid #6366f1; padding: 12px; border-radius: 6px; }
+        button { background: #06b6d4; color: #082f49; border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; cursor: pointer; }
+      </style>
+      <div class="shadow-box">
+        <p style="margin: 0 0 8px 0; color: #e2e8f0;">Shadow DOM Root Piercing Test</p>
+        <button id="shadow-btn">Click Inside Shadow Root</button>
+      </div>
+    `;
+    shadow.getElementById('shadow-btn').onclick = () => {
+      logAction('Clicked button inside pierced shadow DOM root!');
+    };
+
+    // Drag and drop listeners
+    const target = document.getElementById('drag-target');
+    target.ondragover = (e) => e.preventDefault();
+    target.ondrop = (e) => {
+      e.preventDefault();
+      logAction('Dropped element into target container');
+    };
+
+    // Keyboard listener
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        logAction('Keydown Event: Enter key captured');
+      }
+    });
+  </script>
+</body>
+</html>

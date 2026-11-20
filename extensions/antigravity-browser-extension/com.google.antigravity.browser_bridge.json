@@ -1,0 +1,9 @@
+{
+  "name": "com.google.antigravity.browser_bridge",
+  "description": "Antigravity Browser Bridge Native Host",
+  "path": "__NATIVE_HOST_PATH__",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://ojdcmemfhdgolcefboijieiffdolbkld/"
+  ]
+}

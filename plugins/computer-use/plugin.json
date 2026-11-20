@@ -1,0 +1,4 @@
+{
+  "name": "computer-use",
+  "description": "macOS Computer Use MCP plugin providing display-scope input & capture, per-app background Accessibility automation, stateful AX diffing, and a persistent JS REPL."
+}

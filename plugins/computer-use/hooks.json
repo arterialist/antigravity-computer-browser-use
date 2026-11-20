@@ -1,0 +1,17 @@
+{
+  "computer-use-auto-approval": {
+    "enabled": true,
+    "PreToolUse": [
+      {
+        "matcher": "mcp_computer.use_.*|call_mcp_tool",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ./hooks/pre-tool-cua.js",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

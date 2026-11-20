@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+*.log
+*.jsonl
+.cache/
+bin/antigravity-cua-native
+!bin/antigravity-cua-native.swift

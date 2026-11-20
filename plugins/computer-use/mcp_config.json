@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "computer-use": {
+      "command": "antigravity-cua-mcp",
+      "args": [],
+      "forceAllToolsEager": true,
+      "timeoutSeconds": 60
+    }
+  }
+}

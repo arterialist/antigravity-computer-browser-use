@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Antigravity Browser Bridge",
+  "short_name": "Antigravity Bridge",
+  "version": "1.0.0",
+  "description": "Native browser automation bridge for Antigravity AI coding assistant",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA8zTdd3NdE7cdbWGok+3ktBmLsQqs0Uzta+ZY5/sPaqFjzeQVPxcvDrpXDv/enoVdUpcxAE9bct0lfeBoY3vrWuC+ByELA3auaNBuP5mF0l7/rykl5nMTPr34aNIq+yowHrafwaaTII7GOIv4Rc5rgq3g3b3aoi8DOPAS5YwaJKzOKtMOxxlxb3qJqsgSeELkNYn58GSEK8X2qCIfC5KzyAH1sFiPitmsJ+U5jmEghNpoDHGgoPR8L73WnJSn+FVRogV06sgt+lqojdFsaF/iayVSyib/g8bmx3Z/rMoIOZlGX7DZC+fofgUkopYGAgvaON24sD9T1ezhV+FUCdxXvQIDAQAB",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting",
+    "storage",
+    "alarms",
+    "nativeMessaging",
+    "downloads",
+    "debugger"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Antigravity Browser Bridge",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
